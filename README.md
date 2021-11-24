@@ -14,6 +14,7 @@ Las funciones son:
 - cipher: Con los valores de p y q obtenidos de la función Generator, se calcular n=p*q, phin = (p-1)*(q-1), e (un número random entre 2 a n-1), d (inversa de e en mod phin). Y se cifra el mensaje con la operación de exponenciación modular c = m^e mod n. Y se retornan lo valores de n,e,d,c
 - decipher: Con los valores obtenidos de la función cipher se descifra el mensaje c, mediante la operación m = c^d mod n 
 ========================================================================
+
 En el archivo AttackRSA.py se encuentran los métodos de ataque al cifrado RSA. Dichas funciones de ataque son:
 - attack1: La cual calcula m mediante la operación m = c^1/e
 - attack2: Verifica si el gcd de e1 y e2 es 1 (si son coprimos). En caso sea así, procede a verificar que c2 y n sean coprimos para calcular la inversa de c2. Tras esto se calcula m mediante la operación m = (c1^x * c2'^-y) mod n
