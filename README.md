@@ -16,6 +16,6 @@ Las funciones son:
 ========================================================================
 
 En el archivo AttackRSA.py se encuentran los métodos de ataque al cifrado RSA. Dichas funciones de ataque son:
-- attack1: La cual calcula m mediante la operación m = c^1/e
+- attack1: La cual, para calcular m, primero debemor determinar los factores de n, lo cual se consifue con la función factorizator(), que hace factorizaciones mediante prueba y error. Una vez obtenidos los factores de n (p y q), obtenemos Phi de n, y con ello obtenemos d (inversa de e en mod phi) y realizamos la operación m = c^d mod n
 - attack2: Verifica si el gcd de e1 y e2 es 1 (si son coprimos). En caso sea así, procede a verificar que c2 y n sean coprimos para calcular la inversa de c2. Se calcula la inversa de x. Tras esto se calcula m mediante la operación m = (c1^x * c2'^-y) mod n si es que y<0 o m = (c1^-x * c2'^y) mod n si x>0
 - Las potenciaciones requeridas en attack2 son muy grandes, por lo que se genera un overflow, para evitar dicho problema se creó la función Mypow. Dicha función realiza lo mismo que la función pow convencional, con la excepción de no convertir los valores a tipo float, esto permite evitar dicho overflow.
